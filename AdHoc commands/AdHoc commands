@@ -1,0 +1,23 @@
+
+1. ==> Yum install ansible
+
+2. ==> vim /etc/ansible/host       
+        [ all] 
+              ip server 
+              ip. Server  
+         [group] 
+              ip server 
+              ip. Server  
+
+
+3. ==> ansible   all -m command -a  “ yum repolist “
+
+___________________________________________________________
+
+1 ==> ansible   all -m command -a  “ yum install openssh “
+
+2  ==> ansible   all  -m yum -a  “ name= openssh state=present  “  or  ansible   all  -m yum -a  “ name= openssh state=absent  “
+
+3 ==> ansible   all  -I  Ip,  -m file  -a  “ path=/file1 state= touch mode=777“ 
+
+4. 3 ==> ansible   all  -I  Ip,  -m file  -a  “ path=/file1 state= absent“ 
