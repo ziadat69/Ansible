@@ -1,0 +1,32 @@
+Playbooks import
+
+==>  Vim 1lab.yml    
+
+           hosts : all 
+           tasks :                                    
+                  - name :    create gruop   (groupadd -g 4000 admins)
+                     Group : name=admins   state=present gid= 4000                                ##create gruop
+
+
+==>  Vim 2lab.yml    
+
+           hosts : all 
+           tasks :                                    
+                  - name : add user   (adduser -u 20  -g admins   root
+                     User :  name=root   uid= 20    group = admins  shell:/bin/bash                ##create user 
+
+==>  Vim 3lab.yml    
+
+           hosts : all 
+           tasks :                                    
+                  - name : create gruop   (groupadd -g 300 admins)
+                     Group : name=admins   state=present gid= 4000   
+
+
+            ==> vim main.yml                                                                                            #create group 
+          import_playbook : 1lab.yml
+          import_playbook :2lab.yml
+          import_playbook : 3lab.yml
+
+
+==> ansible-playbook  main.yml 
