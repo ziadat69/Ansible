@@ -11,13 +11,13 @@ Handlers (2) 
                      Notify : 
                           -h1
                    Ignore_erorr:  true                                         # if true continue                       -meta: fluch_handlers  
-                   - name : = create  /file (touch file)                       ##create file 
+                   - name :  create  /file (touch file)                       ##create file 
                      file : path=/file.txt   state=touch  
                      Notify : 
                           -h1
 
                     -meta: fluch_handlers    
-                   - name : = create  /file2 (touch file)                       ##create file2
+                   - name : Create  /file2 (touch file)                       ##create file2
                      file : path=/file2.txt   state=touch  
                      Notify : 
                           -h1  
