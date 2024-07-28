@@ -10,3 +10,5 @@
  4) Roles: Create structured tasks for specific purposes such as managing files, users, and server configurations; define handlers within roles to perform additional actions when notified.
 
 5) Vars: Define and use variables within playbooks for dynamic task management, create roles that include variables for flexibility and reusability, and pass variables to playbooks at runtime for dynamic configuration.
+
+6) Loops: Use loops in playbooks to perform repetitive tasks, such as copying or moving multiple files. Define a list of items with source and destination paths and iterate over them to apply actions across multiple files. Customize loop behavior with loop_control for better control over variable names and iterations
