@@ -8,3 +8,5 @@
  3) Handlers: Install and start services like Apache using handlers, create playbooks with handlers that continue on error and execute multiple tasks.
     
  4) Roles: Create structured tasks for specific purposes such as managing files, users, and server configurations; define handlers within roles to perform additional actions when notified.
+
+5) Vars: Define and use variables within playbooks for dynamic task management, create roles that include variables for flexibility and reusability, and pass variables to playbooks at runtime for dynamic configuration.
