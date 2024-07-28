@@ -1,0 +1,94 @@
+==> vim myproy.yml             import_playbook : byplay.yml 
+
+
+==>  vim myproy.yml  
+           roles :
+           -  file
+           - user
+           - server
+ _____________________________________  
+===> mkdir -p roles/file/tasks
+===> vim main.yml
+
+           hosts : all
+           tasks :     
+                   -name : create file1 ( touch file1) 
+                      file : 
+                            path: /file1 
+                            state: touch 
+
+                          notify :                          
+                                   save the mode this file1
+ 
+                   - meta : flush_handlers
+
+                    - name:  change mode
+                      File: 
+                               name: /file1 
+                               mode : ’555’
+
+         ==> mkdir -p roles/file/handlers
+
+         ===> vim main.yml                                               
+         - name :  save the mode this file1
+                             shell : “ ls -l /file1 “
+  
+_______________________________________________-
+
+===> mkdir -p roles/user/tasks
+===> vim main.yml
+
+           hosts : all
+           tasks :     
+               - name:  create user (adduuser -u 10 -g work ziadat)
+                   user: 
+                               name: ziadat 
+                               uid: 10 
+                               groub : work 
+                               shell:  /bin/bash
+                         notify :                            
+                          create gruop  IT (groupadd -g 4000 It)
+                   - meta : flush_handlers
+
+                    - name: Force dbuser1 to change its password on first login 
+                        command: chage -d 0 ziadat
+
+                      - name: Set password expiration for user ziadat to 10 days 
+                            user: name: ziadat 
+                            password_expire_max_days: 10
+                     
+                     
+
+ ==> mkdir -p roles/user/handlers
+
+ ==> vim main.yml                                               
+                  - name :   create gruop  IT (groupadd -g 4000 it)
+                    groub :
+                          name:  it 
+                          state: present 
+                          gid : 4000   
+__________________________________________________      
+                       
+==> mkdir -p  roles/server/tasks
+==> vim server.yml              
+           hosts : all
+           tasks :     
+                   - name : install apache (yum install httpd)
+                     yum : 
+                            name : httpd
+                            state:  latest  
+
+                          notify :                           
+                               start the apache (systemctl reload httpd)    
+
+                   - name: Install Python 3.6 
+                      yum: 
+                             name: python36
+                             state: present
+                     
+                   ==> mkdir -p roles/server/handlers
+                  ==> vim main.yml                                        
+                       - name :  start the apache (systemctl reload httpd) 
+                             service :
+                                    name :  httpd 
+                                    state : reloaded                 
