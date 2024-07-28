@@ -1,0 +1,12 @@
+- name: Move multiple files
+  hosts: all
+  become: true
+  tasks:
+    - name: Move file1 to file10
+      command: mv {{ loop.src }} {{ loop.dest }}
+      loop:
+        - { src: /root/file1, dest: /root/file10 }
+        - { src: /root/file2, dest: /root/file20 }
+        - { src: /root/file3, dest: /root/file30 }
+      loop_control :                    
+          loop_var : loop
