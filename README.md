@@ -1,4 +1,5 @@
-# Ansible
+# Ansible <img align="right" alt="Coding" width="50" src="https://fabianlee.org/wp-content/uploads/2017/06/ansible_logo.png">
+
 
 1) Ad-Hoc Commands: Install Ansible, configure the hosts file, display Yum repository lists, install OpenSSH, manage OpenSSH with the Yum module (install or remove), create files with specific permissions, and delete created files.
 
