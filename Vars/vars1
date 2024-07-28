@@ -1,0 +1,20 @@
+
+
+==> vim main.yml 
+          import_playbook : stplay.yml 
+
+==>  Vim 1stplay.yml   
+            
+         - name: Example Playbook with Variables
+           hosts : all 
+           vars: 
+                  file1 : /home/glitch/file1.txt
+
+           tasks : 
+                  - name : create file.txt   (touch /home/glitch/file.txt)
+                   file :
+                      path : “{{file1}}“  
+                      state: touch                        ##create file 
+      
+                   
+==> ansible-playbook  main.yml 
