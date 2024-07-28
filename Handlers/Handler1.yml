@@ -10,7 +10,7 @@
                           -h1
                    Ignore_erorr:  true                                         # if true continue  
 
-                   - name : = create  /file (touch file)                       ##create file 
+                   - name : create  /file (touch file)                       ##create file 
                      file : path=/file.txt   state=touch  
 
           handlers :     
