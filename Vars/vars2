@@ -1,0 +1,24 @@
+==> vim myproy.yml             import_playbook : byplay.yml 
+
+
+==>  vim myproy.yml  
+           roles :
+           -  file
+
+___________________________ 
+==> mkdir -p roles/file/
+        ==> vim roles 
+             File1 =  /home/glitch/file1.txt
+   
+
+
+==> mkdir -p roles/file/tasks
+
+        ==> vim main.yml
+
+           hosts : all
+           tasks :     
+                   -name : create file1 ( touch file1) 
+                     file : 
+                            path : “{{file1}}“  
+                            state: touch 
