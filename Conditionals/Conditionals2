@@ -1,0 +1,16 @@
+=> vim Conditionals2.yml
+
+
+- hosts: all
+  tasks:                   
+            - name: create directory
+              file:
+               path: /home/glitch/Download2
+               state: directory
+
+              register: mkdirdesktop2
+
+            - name: create msg
+              debug:
+                var: mkdirdesktop2
+~                                      
