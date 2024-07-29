@@ -1,0 +1,15 @@
+vim register.vim                                
+
+
+- hosts: all 
+  tasks : 
+                 - name: find the command
+                   find:
+                      paths: /home/glitch
+                      patterns: '*.txt'
+
+                   register: fileslist
+
+                 - name: print filelist
+                   debug:
+                         var: fileslist
