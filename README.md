@@ -12,3 +12,5 @@
 5) Vars: Define and use variables within playbooks for dynamic task management, create roles that include variables for flexibility and reusability, and pass variables to playbooks at runtime for dynamic configuration.
 
 6) Loops: Use loops in playbooks to perform repetitive tasks, such as copying or moving multiple files. Define a list of items with source and destination paths and iterate over them to apply actions across multiple files. Customize loop behavior with loop_control for better control over variable names and iterations
+
+7) Conditionals: Utilize conditionals in playbooks to execute tasks based on specific conditions. Check the status of services and perform actions only if certain conditions are met. Register results of tasks and use them in subsequent tasks to create dependencies and conditional workflows
