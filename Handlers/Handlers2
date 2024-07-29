@@ -1,31 +1,32 @@
 Handlers (2) 
 ==> vim main.yml 
-          import_playbook :  labHand.yml  
+          import_playbook:  labHand.yml  
 
 ==>  Vim labHand2.yml       
 
-           hosts : all 
-           tasks : 
-                  - name : install apache ( yum install httpd )             #install file 
-                    yum :  name= httpd state=present
-                     Notify : 
+           hosts: all 
+           tasks: 
+                  - name: install apache ( yum install httpd )             #install file 
+                      yum:  name= httpd state=present
+                     notify: 
                           -h1
-                   Ignore_erorr:  true                                         # if true continue                       -meta: fluch_handlers  
-                   - name :  create  /file (touch file)                       ##create file 
-                     file : path=/file.txt   state=touch  
-                     Notify : 
+                   ignore_erorr:  true                                         # if true continue                       -meta: fluch_handlers  
+                   - name:  create  /file (touch file)                       ##create file 
+                      file: path=/file.txt   state=touch  
+                     notify: 
                           -h1
 
                     -meta: fluch_handlers    
                    - name : Create  /file2 (touch file)                       ##create file2
-                     file : path=/file2.txt   state=touch  
-                     Notify : 
+                      file: path=/file2.txt   state=touch  
+                     notify: 
                           -h1  
 
-                  handlers :     
-                   - name :    -h1  (systemctl start httpd)                  #start apache server   
-                     Service : name= httpd state=started                  
-                     shell : “ date  >> /time “            
+              handlers :     
+                   - name:    -h1  (systemctl start httpd)                  #start apache server   
+                     service: name= httpd state=started                  
+                     shell: “ date  >> /time “     
+
 ==> ansible-playbook  main.yml
 
 Result : Run  task1 task4 task2  task4 task3
