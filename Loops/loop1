@@ -2,15 +2,14 @@
 
 ===> vim loops.yml
 
-           hosts : all
-           tasks :     
-                   -name : copy file1 (  copy  file{1..3} ) 
-                    - name: Copy files 
+           hosts: all
+           tasks:     
+                   - name : copy file1 (  copy  file{1..3} ) 
                             copy: 
                             src: "{{ item.src }}" 
                             dest: "{{ item.dest }}" 
-                      loop:
+                       loop:
                          - { src: /root/file1, dest: /root/destination1 } 
                          - { src: /root/file2, dest: /root/destination2 } 
-                         -{ src: /root/file3, dest: /root/destination3 }
+                         - { src: /root/file3, dest: /root/destination3 }
                                   
