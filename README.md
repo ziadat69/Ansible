@@ -13,4 +13,4 @@
 
 6) Loops: Use loops in playbooks to perform repetitive tasks, such as copying or moving multiple files. Define a list of items with source and destination paths and iterate over them to apply actions across multiple files. Customize loop behavior with loop_control for better control over variable names and iterations
 
-7) Conditionals: Utilize conditionals in playbooks to execute tasks based on specific conditions. Check the status of services and perform actions only if certain conditions are met. Register results of tasks and use them in subsequent tasks to create dependencies and conditional workflows
+7) Conditionals: Use conditionals to execute tasks based on specific conditions, such as checking the status of services or the output of commands. Register results of tasks and use them in subsequent tasks to create dependencies and conditional workflows. Utilize facts to make decisions based on system information, and implement handlers to respond to changes triggered by conditional tasks.
