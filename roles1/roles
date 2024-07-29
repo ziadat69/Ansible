@@ -1,12 +1,16 @@
-==> vim myproy.yml             import_playbook : byplay.yml 
+==> vim myproy.yml             
+import_playbook : byplay.yml 
 
+
+_____________________________________________
 
 ==>  vim myproy.yml  
            roles :
            -  file
            - user
            - server
- _____________________________________  
+
+_____________________________________________
 ===> mkdir -p roles/file/tasks
 ===> vim main.yml
 
@@ -33,7 +37,8 @@
          - name :  save the mode this file1
                              shell : “ ls -l /file1 “
   
-_______________________________________________-
+
+_____________________________________________
 
 ===> mkdir -p roles/user/tasks
 ===> vim main.yml
@@ -50,18 +55,18 @@ _______________________________________________-
                           create gruop  IT (groupadd -g 4000 It)
                    - meta : flush_handlers
 
-                    - name: Force dbuser1 to change its password on first login 
+              - name: Force dbuser1 to change its password on first login 
                         command: chage -d 0 ziadat
 
-                      - name: Set password expiration for user ziadat to 10 days 
+              - name: Set password expiration for user ziadat to 10 days 
                             user: name: ziadat 
                             password_expire_max_days: 10
                      
                      
 
  ==> mkdir -p roles/user/handlers
+ ==> vim main.yml
 
- ==> vim main.yml                                               
                   - name :   create gruop  IT (groupadd -g 4000 it)
                     groub :
                           name:  it 
@@ -82,13 +87,13 @@ __________________________________________________
                                start the apache (systemctl reload httpd)    
 
                    - name: Install Python 3.6 
-                      yum: 
+                       yum: 
                              name: python36
                              state: present
                      
-                   ==> mkdir -p roles/server/handlers
-                  ==> vim main.yml                                        
-                       - name :  start the apache (systemctl reload httpd) 
+==> mkdir -p roles/server/handlers
+==> vim main.yml                                        
+                 - name :  start the apache (systemctl reload httpd) 
                              service :
                                     name :  httpd 
                                     state : reloaded                 
