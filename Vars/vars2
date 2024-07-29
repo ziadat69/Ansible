@@ -2,13 +2,13 @@
 
 
 ==>  vim myproy.yml  
-           roles :
+           roles:
            -  file
 
 ___________________________ 
 ==> mkdir -p roles/file/
         ==> vim roles 
-             File1 =  /home/glitch/file1.txt
+            File1 =  /home/glitch/file1.txt
    
 
 
@@ -16,9 +16,9 @@ ___________________________ 
 
         ==> vim main.yml
 
-           hosts : all
-           tasks :     
-                   -name : create file1 ( touch file1) 
-                     file : 
-                            path : “{{file1}}“  
+           hosts: all
+           tasks:     
+                   -name: create file1 ( touch file1) 
+                    file: 
+                            path: “{{file1}}“  
                             state: touch 
