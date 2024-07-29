@@ -2,21 +2,21 @@ vim Conditionals1.yml
 
 
 
- -  hosts: all 
+-   hosts: all
     tasks: 
                              - name: Check if sshd service is active
                                command: systemctl is-active sshd
-                               register: sshd_status 
+                               register: sshd_status
                                changed_when: false
 
 
-    
-                                - name: Create hardlink (  ln /root/file1 /home/glitch/hardlink)
-                                  command: ln {{ src }} {{ dest }} 
-                              
-                                  vars: 
-                                                src:        /root/file1
-                                                dest:      /home/glitch/hardlink
-           
 
-                                  when:  sshd_status.stdout.strip() == "active"
+                             - name: Create hardlink
+                               command: ln {{ src }} {{ dest }}
+
+                               vars:
+                                                src:       /home/glitch/file1
+                                                dest:      /home/glitch/hardlink
+
+
+                               when:  sshd_status.stdout.strip() == "active"
