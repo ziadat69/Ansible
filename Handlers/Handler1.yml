@@ -2,20 +2,20 @@
           import_playbook :  labHand.yml  
 
 ==>  Vim labHand.yml       
-           hosts : all 
-           tasks : 
-                  - name : install apache ( yum install httpd )             #install file 
-                   yum :  name= httpd state=present
-                     Notify : 
+           hosts: all 
+           tasks: 
+                  - name: install apache ( yum install httpd )             #install file 
+                     yum:  name= httpd state=present
+                    Notify: 
                           -h1
-                   Ignore_erorr:  true                                         # if true continue  
+                   ignore_erorr:  true                                         # if true continue  
 
-                   - name : create  /file (touch file)                       ##create file 
-                     file : path=/file.txt   state=touch  
+                   - name: create  /file (touch file)                       ##create file 
+                     file: path=/file.txt   state=touch  
 
-          handlers :     
-                       name :    -h1  (systemctl start httpd)                  #start Apache server   
-                     Service : name= httpd state=started                  
+             handlers:     
+                       name:    -h1  (systemctl start httpd)                  #start Apache server   
+                     service: name= httpd state=started                  
 
 ==> ansible-playbook  main.yml
 
