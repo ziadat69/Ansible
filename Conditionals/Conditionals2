@@ -1,0 +1,26 @@
+
+ vim Conditionals2.yml                                 
+
+
+
+- hosts: all
+  vars:
+        file1: /home/glitch/file1.txt
+  tasks:
+
+        - name: change line in the text
+          lineinfile:
+           path: "{{file1}}"
+           regexp: '^hey im redhat 8$'
+           line: "hey im CentOS"
+          when:
+                       - ansible_facts['hostname'] == "ahmadziadat"
+                       - ansible_facts['distribution'] == "CentOS"
+                       - ansible_facts['distribution_version'] == "9"
+          notify: msg
+
+  handlers:
+        - name: msg
+          debug:
+              msg: "The line has been changend"
+
