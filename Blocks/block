@@ -1,0 +1,28 @@
+==> vim block.yml
+
+- hosts: all
+  tasks:
+    - name: tasks block
+      block:
+        - name: change mode of file1
+          file:
+            path: /home/glitch/file1.txt
+            mode: '0777'
+        - name: change mode of notfound
+          file:
+            path: /home/glitch/notfound
+            mode: '0677'
+      rescue:
+        - name: echo task
+          shell: echo "block/resuce/always labs" > /home/glitch/file1.txt
+      always:
+
+        - name: create directory
+          file:
+            path: /home/glitch/block
+            state: directory
+
+    - name: create fileblock.txt
+      file:
+            path: /home/glitch/block/fileblock.txt
+            state: touch
