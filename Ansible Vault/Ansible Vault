@@ -1,0 +1,36 @@
+==> mkdir -p roles/r1/{tasks,vars}
+ 
+
+——————————————————————————————————————————————————————————————————————————————————————————————————————————————
+==> vim roles/r1/tasks/main.yml
+
+            - name:  Add all users to the work group
+              user:
+                name: '{{ item }}'
+                group: work
+              loop:
+                   - adam
+                   - davin
+                   - ziadat69
+              become: yes
+              become_user: root
+              become_method: su
+           
+
+
+——————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+
+==> vim roles/r1/vars/main.ym
+
+
+     ansible_become_pass: roboot
+
+——————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+==> ansible-vault encryption roles/r1/vars/main.yml 
+        New Vault password: ****
+        Confirm New Vault password: ****
+        Encryption successful   
+
+===> ansible-playbook   -i 172.16.232.142, myproj.yml -J
