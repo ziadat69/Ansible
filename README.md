@@ -14,3 +14,8 @@
 6) Loops: Use loops in playbooks to perform repetitive tasks, such as copying or moving multiple files. Define a list of items with source and destination paths and iterate over them to apply actions across multiple files. Customize loop behavior with loop_control for better control over variable names and iterations
 
 7) Conditionals: Use conditionals to execute tasks based on specific conditions, such as checking the status of services or the output of commands. Register results of tasks and use them in subsequent tasks to create dependencies and conditional workflows. Utilize facts to make decisions based on system information, and implement handlers to respond to changes triggered by conditional tasks.
+   
+8) Blocks: Use task blocks to group tasks together and define rescue and always sections to handle errors and ensure certain tasks are always executed. This helps manage complex workflows and ensures reliability by defining specific actions to take when errors occur and actions to always perform regardless of success or failure of the main tasks.
+
+
+9) Ansible Vault: Secure sensitive information, such as passwords, within playbooks and roles using Ansible Vault. Define variables with sensitive data and encrypt these variables to ensure secure handling. Utilize Vault-encrypted files in playbooks and roles, and decrypt them during playbook execution to maintain the confidentiality of sensitive information.
