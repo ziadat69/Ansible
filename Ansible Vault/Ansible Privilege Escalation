@@ -1,11 +1,11 @@
 - hosts: all
   vars:
-    - ansible_become_pass: ******
+    - ansible_become_pass: ***plain text***
   tasks:
-            - name:  Add all hosts running this playbook to the works group
-              add_host:
+            - name:  Add all users to the work group
+              user:
                 name: '{{ item }}'
-                groups: works
+                group: work
               loop:
                    - adam
                    - davin
@@ -13,9 +13,7 @@
               become: yes
               become_user: root
               become_method: su
-            - name: Print hosts in the done group
-              debug:
-                  msg: "Hosts in works group: {{ groups['works'] }}"
+           
 
 
 
