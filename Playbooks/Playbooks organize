@@ -2,18 +2,18 @@
           import_playbook : stplay.yml 
 
 ==>  Vim 1stplay.yml       
-           hosts : all 
-           tasks : 
-                  - name : create file.txt   (touch file.txt)
-                    file : path=/file.txt   state=touch mode=777                      ##create file 
-                     Notify : 
+           hosts: all 
+           tasks: 
+                  - name: create file.txt   (touch file.txt)
+                    file: path=/file.txt   state=touch mode=777                      ##create file 
+                     Notify: 
                           -h1 
-                   - name : = delete  /file (rm file)                                    #delete file 
-                     file : path=/file.txt   state=absent
+                   - name: = delete  /file (rm file)                                    #delete file 
+                     file: path=/file.txt   state=absent
 
-           handlers :     
-                     name :    -h1  (touch file2.txt  && chmod 777 file2)
-                     file : path=/file2.txt   state=touch mode=777                       ##create file 
+           handlers:     
+                     name:    -h1  (touch file2.txt  && chmod 777 file2)
+                     file: path=/file2.txt   state=touch mode=777                       ##create file 
                    
 ==> ansible-playbook  main.yml 
 
