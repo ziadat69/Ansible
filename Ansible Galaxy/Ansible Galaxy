@@ -1,11 +1,4 @@
-To test Ansible Galaxy and use a downloaded role, here’s how to set up and test a simple role from Ansible Galaxy in a test environment.
-
-Requirements:
-
-	1.	Ansible installed on your machine.
-	2.	Internet access to download roles from Ansible Galaxy.
-
-Steps:
+Open https://galaxy.ansible.com/
 
 1. Download a Role from Ansible Galaxy:
 
