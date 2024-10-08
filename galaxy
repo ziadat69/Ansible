@@ -1,4 +1,0 @@
-- hosts: all
-  tasks:
-    - name: Test connectivity using community.general.ping
-      community.general.ping:
