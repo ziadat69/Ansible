@@ -1,7 +1,10 @@
 ==> vim main.yml 
           import_playbook : stplay.yml 
 
-==>  Vim 1stplay.yml       
+==>  Vim 1stplay.yml  
+           ---
+           name: This is my first Play
+       
            hosts: all 
            tasks: 
                   - name: create file.txt   (touch file.txt)
