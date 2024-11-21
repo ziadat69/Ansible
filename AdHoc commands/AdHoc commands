@@ -7,8 +7,7 @@
               ip. Server  
          [group] 
               ip server 
-              ip. Server  
-
+              ip. Server
 
 3. ==> ansible   all -m command -a  “ yum repolist “
 
@@ -21,3 +20,33 @@ ___________________________________________________________
 3 ==> ansible   all  -I  Ip,  -m file  -a  “ path=/file1 state= touch mode=777“ 
 
 4. 3 ==> ansible   all  -I  Ip,  -m file  -a  “ path=/file1 state= absent“ 
+
+****************************************
+If the file /etc/ansible/hosts does not exist, 
+you can create a local configuration file ansible.cfg to define the inventory and other settings for Ansible. 
+Follow these steps:
+
+--> vim ansible.cfg
+    Add the following lines to define the inventory:
+
+     [defaults]
+     inventory = ./hosts
+
+2. Create the hosts file
+This file will contain the group definitions and server details.
+
+vim hosts
+Add the following content to define two groups:
+
+Content of the hosts file:
+
+[redteam]
+redserver ansible_host=172.16.232.142 ansible_user=glitch
+
+[blueteam]
+blueserver ansible_host=172.16.232.142 ansible_user=ahmad
+ 
+****************************************
+
+
+
