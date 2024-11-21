@@ -1,18 +1,19 @@
 Playbooks import
 
 ==>  Vim 1lab.yml    
-
-           hosts: all 
+           ---
+           name: create Group in Red Team Server
+           hosts: redteam  
            tasks:                                    
                   - name:    create gruop   (groupadd -g 4000 admins)
                     group: name=admins   state=present gid= 4000                                ##create gruop
 
 
 ==>  Vim 2lab.yml    
-
+           
            hosts: all 
            tasks:                                    
-                  - name : add user   (adduser -u 20  -g admins   root)
+                  - name : add user   (adduser -u 20  -g admins root)
                     user :  name=root   uid= 20    group = admins  shell:/bin/bash                ##create user 
 
 ==>  Vim 3lab.yml    
