@@ -12,8 +12,14 @@
 3. ==> ansible   all -m command -a  “ yum repolist “
 
 ___________________________________________________________
+To list all the modules available in Ansible, you can use the following command:
+ 
+--> ansible-doc -l 
 
-1 ==> ansible   all -m command -a  “ yum install openssh “
+
+1 ==> ansible   all -m command -a  " yum install openssh"   
+  ==> ansible all -m shell -a "sudo yum install openssh"  
+  shell vs command : If you are running simple commands, use the command module. If you need to run complex commands that require Shell features (loops, redirection, etc.), use the shell module.
 
 2  ==> ansible   all  -m yum -a  “ name= openssh state=present  “  or  ansible   all  -m yum -a  “ name= openssh state=absent  “
 
