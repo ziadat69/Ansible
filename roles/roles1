@@ -6,7 +6,7 @@ _____________________________________________
 
 ==>  vim myproy.yml  
            roles :
-           -  file
+           - file
            - user
            - server
 
@@ -17,14 +17,14 @@ _____________________________________________
            hosts : all
            tasks :     
                    - name : create file1 ( touch file1) 
-                      file : 
+                     File : 
                             path: /file1 
                             state: touch 
 
-                          notify :                          
+                    notify :                          
                                    save the mode this file1
  
-                   - meta : flush_handlers
+                    - meta : flush_handlers
 
                     - name:  change mode
                       File: 
@@ -34,7 +34,7 @@ _____________________________________________
          ==> mkdir -p roles/file/handlers
 
          ===> vim main.yml                                               
-         - name :  save the mode this file1
+                           - name :  save the mode this file1
                              shell : “ ls -l /file1 “
   
 
@@ -46,17 +46,18 @@ _____________________________________________
            hosts : all
            tasks :     
                - name:  create user (adduuser -u 10 -g work ziadat)
-                   user: 
+                 user: 
                                name: ziadat 
                                uid: 10 
                                groub : work 
                                shell:  /bin/bash
                          notify :                            
                           create gruop  IT (groupadd -g 4000 It)
-                   - meta : flush_handlers
+
+              - meta: flush_handlers
 
               - name: Force dbuser1 to change its password on first login 
-                        command: chage -d 0 ziadat
+                command: chage -d 0 ziadat
 
               - name: Set password expiration for user ziadat to 10 days 
                             user: name: ziadat 
@@ -71,7 +72,7 @@ _____________________________________________
                     groub :
                           name:  it 
                           state: present 
-                          gid : 4000   
+                          gid: 4000   
 __________________________________________________      
                        
 ==> mkdir -p  roles/server/tasks
@@ -80,20 +81,20 @@ __________________________________________________
            tasks :     
                    - name : install apache (yum install httpd)
                      yum : 
-                            name : httpd
+                            name: httpd
                             state:  latest  
 
-                          notify :                           
+                   notify :                           
                                start the apache (systemctl reload httpd)    
 
                    - name: Install Python 3.6 
-                       yum: 
+                     yum: 
                              name: python36
                              state: present
                      
 ==> mkdir -p roles/server/handlers
 ==> vim main.yml                                        
                  - name :  start the apache (systemctl reload httpd) 
-                             service :
-                                    name :  httpd 
-                                    state : reloaded                 
+                   service :
+                                    name:  httpd 
+                                    state: reloaded                 
