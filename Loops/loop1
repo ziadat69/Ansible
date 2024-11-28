@@ -8,7 +8,7 @@
                      copy: 
                             src: "{{ item.src }}" 
                             dest: "{{ item.dest }}" 
-                       loop:
+                     loop:
                          - { src: /root/file1, dest: /root/destination1 } 
                          - { src: /root/file2, dest: /root/destination2 } 
                          - { src: /root/file3, dest: /root/destination3 }
