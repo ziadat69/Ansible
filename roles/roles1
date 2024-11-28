@@ -16,7 +16,7 @@ _____________________________________________
 
            hosts : all
            tasks :     
-                   -name : create file1 ( touch file1) 
+                   - name : create file1 ( touch file1) 
                       file : 
                             path: /file1 
                             state: touch 
