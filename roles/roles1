@@ -51,7 +51,7 @@ _____________________________________________
                                uid: 10 
                                groub : work 
                                shell:  /bin/bash
-                         notify :                            
+               notify:                            
                           create gruop  IT (groupadd -g 4000 It)
 
               - meta: flush_handlers
