@@ -19,3 +19,5 @@
 
 
 9) Ansible Vault: Secure sensitive information, such as passwords, within playbooks and roles using Ansible Vault. Define variables with sensitive data and encrypt these variables to ensure secure handling. Utilize Vault-encrypted files in playbooks and roles, and decrypt them during playbook execution to maintain the confidentiality of sensitive information.
+
+10) Ansible Galaxy: A pre-built Ansible role was downloaded from Ansible Galaxy to automatically install and configure Apache. A playbook was then created to utilize the downloaded role, and the target servers were defined in a hosts file. After running the playbook, it was successfully verified that Apache was installed and running on the local system.
