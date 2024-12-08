@@ -1,0 +1,22 @@
+The Free strategy allows Ansible to run tasks on all hosts simultaneously without waiting for one host to finish before moving on to the next. It is ideal when you want maximum parallelism and don’t need tasks to depend on each other across hosts.
+
+Key Points:
+
+Tasks are executed concurrently on all hosts.
+No waiting for one host to complete tasks before moving to the next.
+Suitable for independent tasks that don't need to be sequential.
+Example: In this example, Ansible will execute tasks on all hosts in parallel.
+
+- name: Apply configurations to webservers with Free strategy
+  hosts: webservers
+  strategy: free
+  tasks:
+    - name: Install nginx
+      apt:
+        name: nginx
+        state: present
+    - name: Start nginx service
+      service:
+        name: nginx
+        state: started
+Here, nginx will be installed and started on all webservers at the same time, without waiting for any host to finish before starting the next.
