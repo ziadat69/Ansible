@@ -21,3 +21,9 @@
 9) Ansible Vault: Secure sensitive information, such as passwords, within playbooks and roles using Ansible Vault. Define variables with sensitive data and encrypt these variables to ensure secure handling. Utilize Vault-encrypted files in playbooks and roles, and decrypt them during playbook execution to maintain the confidentiality of sensitive information.
 
 10) Ansible Galaxy: A pre-built Ansible role was downloaded from Ansible Galaxy to automatically install and configure Apache. A playbook was then created to utilize the downloaded role, and the target servers were defined in a hosts file. After running the playbook, it was successfully verified that Apache was installed and running on the local system.
+
+11) Forks vs Serial: Forks control the number of hosts managed in parallel, speeding up execution, while Serial limits tasks to a specific number of hosts at a time, ensuring gradual and safe deployment.
+
+12) Ansible Strategies: Linear executes tasks in sequence across hosts, Free allows independent execution on hosts, and Debug pauses tasks for troubleshooting during execution.
+
+13) Ansible Async: tasks usually wait for completion before moving to the next one. However, async lets you run tasks in the background with a specified timeout. This is useful for long-running tasks like system updates or large downloads.
