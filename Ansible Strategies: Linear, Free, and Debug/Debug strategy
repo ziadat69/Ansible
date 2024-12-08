@@ -1,0 +1,16 @@
+The  Debug strategy 
+
+
+
+- name: Apply configurations to webservers with Free strategy
+  hosts: webservers
+  strategy: Debug
+  tasks:
+    - name: Install nginx
+      apt:
+        name: nginx
+        state: present
+    - name: Start nginx service
+      service:
+        name: nginx
+        state: started
