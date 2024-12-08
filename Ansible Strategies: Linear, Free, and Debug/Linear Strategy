@@ -1,0 +1,25 @@
+. Linear Strategy:
+
+The Linear strategy ensures that tasks are executed on each host sequentially. In other words, Ansible will perform all tasks on the first host, then move to the next host, and so on. This strategy is useful when you need to ensure tasks are done in a specific order, especially in complex or dependent operations.
+
+Key Points:
+
+Tasks are executed one at a time, sequentially across all hosts.
+Ensures that all tasks on one host complete before moving on to another host.
+Can be beneficial when tasks on each host need to complete in a controlled sequence.
+Example: In this example, tasks will be executed one after the other for all hosts in the inventory.
+
+- name: Apply configurations to webservers with Linear strategy
+  hosts: webservers
+  strategy: linear
+  tasks:
+    - name: Install nginx
+      apt:
+        name: nginx
+        state: present
+    - name: Start nginx service
+      service:
+        name: nginx
+        state: started
+
+In this example, nginx will be installed and started one by one on each host in the webservers group.
