@@ -2,9 +2,13 @@
 
 [defaults]
 inventory = ./hosts
+
 vault_password_file= code         // for password_
-remote_user= admin                // for user
-private_key_file= keys/id_rs      // for ssh   
+
+remote_user= admin                // for user if you dont have hosts file
+
+private_key_file= keys/id_rs      // for ssh 
+
 command_warnings=False            // for _warnings
 
 [privilege_escalation]              // for local run
