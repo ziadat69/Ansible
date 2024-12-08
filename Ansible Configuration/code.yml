@@ -1,0 +1,9 @@
+
+ ======> ansible-vault create roles/r1/vars/main.yml 
+
+          ansible_become_pass: thepasswordkali
+
+
+=========> vim code.yml
+           key 
+           
