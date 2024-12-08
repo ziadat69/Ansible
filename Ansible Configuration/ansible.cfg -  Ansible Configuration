@@ -1,0 +1,14 @@
+==> vim  ansible.cfg
+
+[defaults]
+
+vault_password_file= code         // for password_
+remote_user= admin                // for user
+private_key_file= keys/id_rs      // for ssh   
+command_warnings=False            // for _warnings
+
+[privilege_escalation]              // for local run
+become_method=su
+become_user=ahmad
+
+
