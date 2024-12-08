@@ -1,0 +1,29 @@
+-->>>1. Forks (Parallelism) Example:
+
+
+Imagine you're organizing a big conference and you need to set up chairs in a large hall. You have 4 workers, and each worker can set up 5 chairs at a time.
+
+Forks Example:
+You set the Forks to 5, which means each worker can handle 5 chairs simultaneously. All 4 workers can work at the same time, so in total, 20 chairs are set up in parallel, speeding up the process.
+In Ansible:
+You have 20 servers, and you set forks = 5 to run 5 tasks in parallel at a time.
+Command example:
+
+ansible-playbook -i inventory.yml playbook.yml -f 5
+This runs the tasks on 5 machines in parallel.
+
+
+
+or 
+
+
+- name: Update servers in batches of 2
+  hosts: all
+  forks: 2
+  tasks:
+    - name: Install updates
+      yum:
+        name: "*"
+        state: latest
+
+
