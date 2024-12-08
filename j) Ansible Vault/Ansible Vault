@@ -24,7 +24,7 @@
 ==> vim roles/r1/vars/main.ym
 
 
-     ansible_become_pass: roboot
+     ansible_become_pass: thepasswordkali
 
 ——————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
