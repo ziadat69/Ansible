@@ -34,3 +34,26 @@
         Encryption successful   
 
 ===> ansible-playbook   -i 172.16.232.142, myproj.yml -J
+
+
+——————————————————————————————————————————————————————————————————————————————————————————————————————————————
+ if you want to edit the password 
+
+===> ansible-vault edit roles/r1/vars/main.yml 
+——————————————————————————————————————————————————————————————————————————————————————————————————————————————
+|^|^|^|^|^|^|^|^|^|^|^|^|^|^|^|^|^|^|^|^|^|^|^|^|^|^|^|^|^|^|^|^|^|^|^|^ 
+
+Very important.
+
+If you want to do it quickly.
+
+ ======> ansible-vault create roles/r1/vars/main.yml 
+
+          ansible_become_pass: thepasswordkali
+
+
+
+
+
+
+
