@@ -1,1 +1,5 @@
-     inventory = ./hosts
+[redteam]
+redserver ansible_host=172.16.232.142 ansible_user=glitch
+
+[blueteam]
+blueserver ansible_host=172.16.232.142 ansible_user=ahmad
