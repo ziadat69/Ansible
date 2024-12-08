@@ -2,7 +2,7 @@
  
 
 ——————————————————————————————————————————————————————————————————————————————————————————————————————————————
-==> vim roles/r1/tasks/main.yml
+==> vim roles/r1/tasks/myplay.yml
 
             - name:  Add all users to the work group
               user:
@@ -21,7 +21,7 @@
 ——————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
 
-==> vim roles/r1/vars/main.ym
+==> vim roles/r1/vars/main.yml
 
 
      ansible_become_pass: thepasswordkali
@@ -52,8 +52,9 @@ If you want to do it quickly.
           ansible_become_pass: thepasswordkali
 
 
-
-
+=========> vim code.yml
+           key 
+         
 
 
 
