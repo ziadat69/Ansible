@@ -1,0 +1,26 @@
+Serial (Sequential) Example:
+Now, imagine you are running a workshop where you want to train participants in batches. You have 10 participants, but you prefer to train only 2 participants at a time.
+
+Serial Example:
+You set the Serial to 2, which means only 2 participants will receive training at a time. Once the first 2 finish, the next 2 will start, and so on, until all 10 participants are trained. This approach ensures that each batch gets focused attention.
+In Ansible:
+You have 10 servers, and you want to update them in batches of 2.
+
+- name: Update servers in batches of 2
+  hosts: all
+  serial: 2
+  tasks:
+    - name: Install updates
+      yum:
+        name: "*"
+        state: latest
+
+This means Ansible will update 2 servers at a time.
+
+
+or 
+
+ansible-playbook -i inventory.yml playbook.yml --serial 2
+
+
+
